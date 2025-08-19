@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button>9a</button>
+    <button class="b9">9b</button>
+
+    <p>
+        <button onclick=" text('heads')">heads</button>
+        <button n onclick=" text('tails')">tails</button>
+    <p class='text'></p>
+    <p>
+        <input type="text" onkeydown="nameText(event)"> <button>submit</button>
+    </p>
+    </p>
+
+    <script>
+        function nameText(event) {
+            if (event.key === 'Enter') {
+                const input = document.querySelector('input').value;
+                const text = document.querySelector('.text');
+                text.innerText = input;
+            }
+
+        }
+        // const bt = document.querySelector('but   ton');
+        // const bt2 = document.querySelector('.b9').innerHTML;
+        // console.log(bt2);
+        function text(choice) {
+            const bt = document.querySelector('.text');
+            // if (choice === 'heads') {
+            bt.innerText = 'You choice ' + choice;
+            // } else {
+            //     bt.innerText = '9a'
+            // }
+            //  'You choice' + choice;
+            // console.log(bt);
+        }
+    </script>
+
+</body>
+
+</html>

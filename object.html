@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Variables</title>
+</head>
+
+<body>
+    <script>
+        const objectData = {
+            name: 'mia99',
+            age: 32,
+        }
+
+        const jsonData = JSON.stringify(objectData);
+
+        const object1 = JSON.parse(jsonData)
+        console.log(typeof object1)
+        // console.log(jsonData);
+        const insideObject = {
+            title: 'hello',
+            box: 5,
+            caculate: function test() {
+                console.log(666);
+                // return 5;
+            },
+        }
+
+        const insideObject2 = {
+            if_convert: function () {
+                // alert(333);
+            },
+            name: 'to_go',
+            type: 'comma',
+            number: 66,
+        }
+        insideObject2.if_convert();
+
+
+
+        const object2 = JSON.stringify(insideObject);
+
+        // console.log(typeof object2)
+        // console.log(typeof objectData)
+        // console.log(objectData.name)
+        // console.log(objectData['age'])
+        objectData.name = 'mia';
+        insideObject.caculate();
+
+        // console.log(objectData) 
+        // console.log(insideObject.caculate());
+
+
+    </script>
+</body>
+
+</html>
