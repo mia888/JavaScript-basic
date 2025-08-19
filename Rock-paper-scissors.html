@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Variables</title>
+</head>
+
+<body>
+    <main>
+        <h2>Rock-Paper-Scissors</h2>
+        <button onclick="rpsGame('Rock')">Rock</button>
+        <button onclick="rpsGame('Paper')">Paper</button>
+        <button onclick="rpsGame('Scissors')">Scissors</button>
+        <button onclick="seeGame('heads')">heads</button>
+        <button onclick="seeGame('tails')">tails</button>
+
+
+        <button onclick="restGame()">Reset</button>
+    </main>
+    <script>
+        let gameRecord = JSON.parse(localStorage.getItem('gameRecord')) || {
+            win: 0,
+            tie: 0,
+            lose: 0,
+        };
+        // console.log(typeof gameRecord);
+        function rpsGame(choice) {
+
+            const computerChoice = Math.random();
+            let computerResult = '';
+            if (computerChoice < 1 / 3) {
+                computerResult = 'Rock';
+            } else if (computerResult > 1 / 3 && computerChoice < 2 / 3) {
+                computerResult = 'Paper';
+            } else {
+                computerResult = 'Scissors';
+            }
+
+            if (choice === 'Rock') {
+                if (computerResult === 'Scissors') {
+                    gameRecord.win += 1;
+
+                    // console.log(computerResult);
+                    // alert('You win!');
+
+                } else if (choice === computerResult) {
+                    gameRecord.tie += 1;
+                    // alert('It\'s a tie!');
+                } else {
+                    gameRecord.lose += 1;
+                    // alert('You lose!');
+                }
+            } else if (choice === 'Paper') {
+                if (computerResult === 'Rock') {
+                    gameRecord.win += 1;
+
+                    // console.log(computerResult);
+                    // alert('You win!');
+
+                } else if (choice === computerResult) {
+                    gameRecord.tie += 1;
+                    // alert('It\'s a tie!');
+                } else {
+                    gameRecord.lose += 1;
+                    // alert('You lose!');
+                }
+            } else if (choice === 'Scissors') {
+                if (computerResult === 'Paper') {
+                    gameRecord.win += 1;
+
+                    // console.log(computerResult);
+                    // alert('You win!');
+
+                } else if (choice === computerResult) {
+                    gameRecord.tie += 1;
+                    // alert('It\'s a tie!');
+                } else {
+                    gameRecord.lose += 1;
+                    // alert('You lose!');
+                }
+            }
+
+            localStorage.setItem('gameRecord', JSON.stringify(gameRecord));
+            alert(`you wein ${gameRecord.win}; you tie ${gameRecord.tie}; you lose ${gameRecord.lose};`);
+        }
+
+        function seeGame(choice) {
+            if (choice === 'heads') {
+                const heads = JSON.parse(localStorage.getItem('gameRecord')).win || 0;
+                console.log(heads);
+            } else if (choice === 'tails') {
+                const tails = JSON.parse(localStorage.getItem('gameRecord')).tie || 0;
+                console.log(tails);
+            }
+        }
+        function restGame() {
+            gameRecord = {
+                win: 0,
+                tie: 0,
+                lose: 0,
+            };
+            localStorage.setItem('gameRecord', JSON.stringify(gameRecord));
+            alert('Game reset!');
+        }
+    </script>
+</body>
+
+</html>

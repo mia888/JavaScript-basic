@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Variables</title>
+</head>
+
+<body>
+    <script>
+        // let local_Data = localStorage.getItem('local_Data') || {
+        //     name: 0,
+        //     age: 0,
+        //     city: 0,
+        // }
+        const myData = {
+            name: 'mia',
+            age: 30,
+        }
+
+        myData.name = 'mia666';
+
+        myData.job = 'developer';
+
+        // delete myData.job;
+
+        // delete myData.name;
+
+        const { name, job: work } = myData
+
+        // myData.method = function test() {
+        //     console.log('test');
+        // }
+        const myData2 = {
+            // age,
+            work,
+            method: function () {
+                console.log('test');
+            }
+        }
+        console.log(myData2);
+
+
+        // localStorage.removeItem('local_Data');
+
+        // console.log(local_Data);
+
+
+        //localStorage.setItem('local_Data', JSON.stringify(local_Data));
+        // console.log(localStorage.getItem('local_Data'));
+
+    </script>
+</body>
+
+</html>
